@@ -35,6 +35,22 @@ Work on your branch, then open a PR to `dev` for integration/staging. Once valid
 | Dev | `http://services-host.ing.unimore.it:8096` | Unimore network only |
 | Production | `https://reportx.unimore.it` | Public |
 
+## Local development
+
+Build and run the container locally with Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+The site will be available at `http://localhost:8096`. File changes are picked up live via the bind mount — no rebuild needed for HTML/CSS/JS edits.
+
+To stop:
+
+```bash
+docker compose down
+```
+
 ## Deploying
 
 **Do not run `docker compose` manually.** Deploys are fully automated via GitHub Actions.
