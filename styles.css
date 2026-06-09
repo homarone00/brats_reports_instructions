@@ -1,14 +1,16 @@
+@import url('https://rsms.me/inter/inter.css');
+
 :root {
   --primary: #2563eb;
-  --dark: #374d81;
-  --aimagelab-red: #a50021;
+  --dark: #0f1e3d;
+  --aimagelab-red: #f04e22;
   --muted: #6b7280;
-  --light: #f3f4f6;
+  --light: #eff4ff;
   --paper: #ffffff;
-  --ink: #172033;
-  --clinician: #fac898;
-  --machine: #c1e1c1;
-  --line: #d8deea;
+  --ink: #0f1e3d;
+  --clinician: #fcd5b5;
+  --machine: #c8e6c9;
+  --line: #dbe4f5;
   --ed: #ef4444;
   --netc: #22c55e;
   --et: #2563eb;
@@ -24,9 +26,11 @@ html {
 
 body {
   margin: 0;
+  padding-bottom: 80px;
   color: var(--ink);
   background: var(--paper);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1, 'ss04' 1;
   line-height: 1.55;
 }
 
@@ -35,7 +39,7 @@ a {
 }
 
 .site-header {
-  background: linear-gradient(135deg, #eef4ff 0%, #ffffff 55%, #eef8f1 100%);
+  background: linear-gradient(135deg, #eef4ff 0%, #ffffff 55%, #eef4ff 100%);
   border-bottom: 1px solid var(--line);
 }
 
@@ -109,8 +113,8 @@ a {
   display: grid;
   align-items: center;
   justify-items: center;
-  min-height: calc(100vh - 64px);
-  padding: clamp(56px, 9vw, 112px) clamp(20px, 5vw, 72px);
+  min-height: auto;
+  padding: clamp(32px, 5vw, 64px) clamp(20px, 5vw, 72px);
 }
 
 .hero-content {
@@ -247,6 +251,10 @@ h3 {
   background: var(--machine);
 }
 
+.protocol-card .card-kicker {
+  background: #bfdbfe;
+}
+
 .powered-by {
   display: flex;
   align-items: center;
@@ -276,11 +284,17 @@ h3 {
   white-space: nowrap;
 }
 
+.aimagelab-logo {
+  height: clamp(1.35rem, 1.95vw, 1.8rem);
+  width: auto;
+  display: block;
+}
+
 .aimagelab-wordmark {
   display: inline-flex;
   align-items: center;
   color: #1f2937;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: clamp(1.35rem, 1.95vw, 1.8rem);
   font-weight: 800;
   letter-spacing: 0;
@@ -821,6 +835,11 @@ figcaption {
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   gap: 20px;
