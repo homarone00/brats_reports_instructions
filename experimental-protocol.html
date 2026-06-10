@@ -13,6 +13,7 @@
   <body class="page-protocol" data-lang="en">
     <header class="site-header">
       <nav class="topbar" aria-label="Primary navigation">
+      <div class="topbar-inner">
         <div class="brand-lockup">
           <a class="brand" href="index.html">ReportX</a>
           <a class="powered-by" href="https://aimagelab.unimore.it/" aria-label="Powered by AI Image Lab">
@@ -25,22 +26,21 @@
           <a href="experimental-protocol.html">Protocol</a>
           <button class="share-button" type="button" data-share-button>Share</button>
           <div class="top-language-switch" aria-label="Language selector">
-            <input class="lang-radio" type="radio" name="language" id="lang-it">
-            <label for="lang-it">Italiano</label>
             <input class="lang-radio" type="radio" name="language" id="lang-en" checked>
             <label for="lang-en">English</label>
+            <input class="lang-radio" type="radio" name="language" id="lang-it">
+            <label for="lang-it">Italiano</label>
           </div>
         </div>
-      </nav>
+            </div>
+    </nav>
       <section id="top" class="hero">
         <div class="hero-content">
           <div class="hero-copy protocol-en-content">
-            <p class="eyebrow">BraTS-ReportX</p>
             <h1>Study Protocol</h1>
             <p>Collaborative Annotation of Clinical MRI Reports for the BraTS-GLI Dataset</p>
           </div>
           <div class="hero-copy protocol-it-content">
-            <p class="eyebrow">BraTS-ReportX</p>
             <h1>Protocollo di Studio</h1>
             <p>Annotazione collaborativa di referti clinici RM per il dataset BraTS-GLI</p>
           </div>
@@ -55,7 +55,7 @@
           <p>Collaborative Annotation of Clinical MRI Reports for the BraTS-GLI Dataset</p>
         </div>
         <div class="prose">
-          <p>Project reference neuroradiologist: <br> Dr. Francesco Farioli, Neuroradiologist and PhD Student, University of Modena and Reggio Emilia</p>
+          <p>Project reference neuroradiologist: <br> Researcher Francesco Farioli, Neuroradiologist and PhD Student, University of Modena and Reggio Emilia</p>
           <p>Coordinating center: <br> AImageLab, Department of Engineering "Enzo Ferrari", University of Modena and Reggio Emilia</p>
         </div>
       </section>
@@ -65,13 +65,19 @@
           <h2>1. Background and Rationale</h2>
         </div>
         <div class="prose">
+          <h3>The BraTS-GLI Dataset</h3>
           <p>Publicly available medical imaging datasets have played a central role in the development and validation of artificial intelligence methods for neuro-oncology. Among these resources, the Brain Tumor Segmentation glioma dataset, BraTS-GLI, represents one of the most widely used benchmarks for adult diffuse glioma MRI analysis. The dataset includes 1,251 pre-operative multiparametric brain MRI examinations, each accompanied by expert tumor segmentations. The available MRI sequences include T1-weighted, post-contrast T1-weighted, T2-weighted, and FLAIR images.</p>
+          <h3>The Gap: Segmentation Without Semantics</h3>
           <p>Since its first releases, BraTS has enabled major progress in automated brain tumor segmentation. However, most publicly available segmentation datasets provide voxel-wise masks but do not include the semantic clinical information that is routinely contained in radiology reports. In clinical practice, radiology reports provide a structured interpretation of imaging findings, including lesion location, morphology, enhancement pattern, mass effect, relationship with adjacent anatomical structures, ventricular or ependymal involvement, multifocality, and other ancillary findings.</p>
+          <h3>The Need for Multimodal Datasets</h3>
           <p>The recent progress of multimodal artificial intelligence has created a strong need for paired imaging-text datasets. In particular, large-scale datasets combining 3D MRI examinations, tumor segmentations, and validated radiology reports may support the development of models that integrate visual and textual information. Such datasets could enable research on report-guided segmentation, automated report generation, image generation, text-conditioned image synthesis, and cross-modal representation learning.</p>
+          <h3>The BraTS-ReportX Project</h3>
           <p>To date, complete and validated radiology reports have not been systematically released for the full BraTS-GLI dataset. The BraTS-ReportX project aims to fill this gap by creating descriptive clinical radiology reports for all 1,251 BraTS-GLI examinations. The final goal is to release a public multimodal dataset including MRI images, tumor segmentations, free-text clinical reports, and structured fields derived from the reports and/or from computational analysis. By making this resource publicly available, the project aims to allow clinical, engineering, and computational research laboratories to develop and validate multimodal models on a shared, clinically meaningful benchmark.</p>
+          <h3>Preliminary Work</h3>
           <p>At the University of Modena and Reggio Emilia, preliminary work has already been performed on 257 BraTS-GLI examinations. In this initial phase, clinician-curated reports were generated and structured according to a standardized internal protocol. The preliminary results suggest that expert-written clinical reports provide richer and more consistent semantic information than automatically generated or less structured report resources. Furthermore, when used as auxiliary semantic supervision during model training, these reports improved 3D brain tumor segmentation performance while preserving an image-only inference pipeline.</p>
+          <h3>Next Steps</h3>
           <p>The next phase of the project will involve a larger collaborative reporting effort performed by expert neuroradiologists. This work may also provide the basis for a future dedicated MICCAI challenge task focused on report-enriched brain tumor MRI analysis, multimodal image-text learning, or report-guided segmentation.</p>
-          <p>The project reference neuroradiologist is Dr. Francesco Farioli, neuroradiologist and PhD student at the University of Modena and Reggio Emilia. The coordinating center is the AImageLab, Department of Engineering "Enzo Ferrari", University of Modena and Reggio Emilia.</p>
+          <p>The project reference neuroradiologist is Researcher Francesco Farioli, neuroradiologist and PhD student at the University of Modena and Reggio Emilia. The coordinating center is the AImageLab, Department of Engineering "Enzo Ferrari", University of Modena and Reggio Emilia.</p>
           <p>All collaborators who complete the assigned work according to the project requirements will be included as co-authors in the resulting dataset publication.</p>
         </div>
       </section>
@@ -173,8 +179,8 @@
           <p>Annotazione collaborativa di referti clinici RM per il dataset BraTS-GLI</p>
         </div>
         <div class="prose">
-          <p>Neuroradiologo di riferimento del progetto: <br> Dr. Francesco Farioli, Neuroradiologo e Dottorando, Universita di Modena e Reggio Emilia</p>
-          <p>Centro di coordinamento: <br> AImageLab, Dipartimento di Ingegneria "Enzo Ferrari", Universita di Modena e Reggio Emilia</p>
+          <p>Neuroradiologo di riferimento del progetto: <br> Dott. Francesco Farioli, Neuroradiologo e Dottorando, Università di Modena e Reggio Emilia</p>
+          <p>Centro di coordinamento: <br> AImageLab, Dipartimento di Ingegneria "Enzo Ferrari", Università di Modena e Reggio Emilia</p>
         </div>
       </section>
 
@@ -183,13 +189,19 @@
           <h2>1. Contesto e Razionale</h2>
         </div>
         <div class="prose">
-          <p>I dataset di imaging medico disponibili pubblicamente hanno avuto un ruolo centrale nello sviluppo e nella validazione di metodi di intelligenza artificiale per la neuro-oncologia. Tra queste risorse, il dataset di glioma Brain Tumor Segmentation, BraTS-GLI, rappresenta uno dei benchmark piu utilizzati per l'analisi RM dei gliomi diffusi dell'adulto. Il dataset comprende 1.251 esami RM cerebrali multiparametrici pre-operatori, ciascuno accompagnato da segmentazioni tumorali di esperti. Le sequenze RM disponibili includono immagini pesate in T1, T1 post-contrasto, T2 e FLAIR.</p>
-          <p>Fin dalle prime release, BraTS ha consentito importanti progressi nella segmentazione automatica dei tumori cerebrali. Tuttavia, la maggior parte dei dataset pubblici di segmentazione fornisce maschere voxel-wise ma non include l'informazione clinica semantica che e normalmente contenuta nei referti radiologici. Nella pratica clinica, i referti radiologici forniscono un'interpretazione strutturata dei reperti di imaging, includendo sede della lesione, morfologia, pattern di enhancement, effetto massa, rapporto con strutture anatomiche adiacenti, coinvolgimento ventricolare o ependimale, multifocalita e altri reperti ancillari.</p>
+          <h3>Il Dataset BraTS-GLI</h3>
+          <p>I dataset di imaging medico disponibili pubblicamente hanno avuto un ruolo centrale nello sviluppo e nella validazione di metodi di intelligenza artificiale per la neuro-oncologia. Tra queste risorse, il dataset di glioma Brain Tumor Segmentation, BraTS-GLI, rappresenta uno dei benchmark più utilizzati per l'analisi RM dei gliomi diffusi dell'adulto. Il dataset comprende 1.251 esami RM cerebrali multiparametrici pre-operatori, ciascuno accompagnato da segmentazioni tumorali di esperti. Le sequenze RM disponibili includono immagini pesate in T1, T1 post-contrasto, T2 e FLAIR.</p>
+          <h3>Il Limite: Segmentazione Senza Semantica</h3>
+          <p>Fin dalle prime release, BraTS ha consentito importanti progressi nella segmentazione automatica dei tumori cerebrali. Tuttavia, la maggior parte dei dataset pubblici di segmentazione fornisce maschere voxel-wise ma non include l'informazione clinica semantica che è normalmente contenuta nei referti radiologici. Nella pratica clinica, i referti radiologici forniscono un'interpretazione strutturata dei reperti di imaging, includendo sede della lesione, morfologia, pattern di enhancement, effetto massa, rapporto con strutture anatomiche adiacenti, coinvolgimento ventricolare o ependimale, multifocalità e altri reperti ancillari.</p>
+          <h3>La Necessità di Dataset Multimodali</h3>
           <p>I recenti progressi dell'intelligenza artificiale multimodale hanno creato una forte esigenza di dataset appaiati immagine-testo. In particolare, dataset su larga scala che combinano esami RM 3D, segmentazioni tumorali e referti radiologici validati possono supportare lo sviluppo di modelli che integrano informazioni visive e testuali. Tali dataset potrebbero abilitare ricerca su segmentazione guidata dal referto, generazione automatica del referto, generazione di immagini, sintesi di immagini condizionata dal testo e apprendimento di rappresentazioni cross-modali.</p>
-          <p>Ad oggi, referti radiologici completi e validati non sono stati rilasciati in modo sistematico per l'intero dataset BraTS-GLI. Il progetto BraTS-ReportX mira a colmare questa lacuna creando referti radiologici clinici descrittivi per tutti i 1.251 esami BraTS-GLI. L'obiettivo finale e rilasciare un dataset multimodale pubblico che includa immagini RM, segmentazioni tumorali, referti clinici in testo libero e campi strutturati derivati dai referti e/o da analisi computazionale. Rendendo questa risorsa pubblicamente disponibile, il progetto intende consentire a laboratori clinici, ingegneristici e computazionali di sviluppare e validare modelli multimodali su un benchmark condiviso e clinicamente significativo.</p>
-          <p>Presso l'Universita di Modena e Reggio Emilia e gia stato svolto lavoro preliminare su 257 esami BraTS-GLI. In questa fase iniziale, sono stati generati referti curati da clinici e strutturati secondo un protocollo interno standardizzato. I risultati preliminari suggeriscono che i referti clinici redatti da esperti forniscono informazioni semantiche piu ricche e piu coerenti rispetto a risorse di refertazione automatiche o meno strutturate. Inoltre, quando utilizzati come supervisione semantica ausiliaria durante il training dei modelli, questi referti hanno migliorato le prestazioni di segmentazione 3D dei tumori cerebrali mantenendo una pipeline di inferenza basata solo sull'immagine.</p>
-          <p>La fase successiva del progetto coinvolgera un piu ampio sforzo collaborativo di refertazione svolto da neuroradiologi esperti. Questo lavoro puo anche costituire la base per una futura task dedicata MICCAI focalizzata su analisi RM dei tumori cerebrali arricchita dal referto, apprendimento multimodale immagine-testo o segmentazione guidata dal referto.</p>
-          <p>Il neuroradiologo di riferimento del progetto e il Dr. Francesco Farioli, neuroradiologo e dottorando presso l'Universita di Modena e Reggio Emilia. Il centro di coordinamento e AImageLab, Dipartimento di Ingegneria "Enzo Ferrari", Universita di Modena e Reggio Emilia.</p>
+          <h3>Il Progetto BraTS-ReportX</h3>
+          <p>Ad oggi, referti radiologici completi e validati non sono stati rilasciati in modo sistematico per l'intero dataset BraTS-GLI. Il progetto BraTS-ReportX mira a colmare questa lacuna creando referti radiologici clinici descrittivi per tutti i 1.251 esami BraTS-GLI. L'obiettivo finale è rilasciare un dataset multimodale pubblico che includa immagini RM, segmentazioni tumorali, referti clinici in testo libero e campi strutturati derivati dai referti e/o da analisi computazionale. Rendendo questa risorsa pubblicamente disponibile, il progetto intende consentire a laboratori clinici, ingegneristici e computazionali di sviluppare e validare modelli multimodali su un benchmark condiviso e clinicamente significativo.</p>
+          <h3>Lavoro Preliminare</h3>
+          <p>Presso l'Università di Modena e Reggio Emilia e già stato svolto lavoro preliminare su 257 esami BraTS-GLI. In questa fase iniziale, sono stati generati referti curati da clinici e strutturati secondo un protocollo interno standardizzato. I risultati preliminari suggeriscono che i referti clinici redatti da esperti forniscono informazioni semantiche più ricche e più coerenti rispetto a risorse di refertazione automatiche o meno strutturate. Inoltre, quando utilizzati come supervisione semantica ausiliaria durante il training dei modelli, questi referti hanno migliorato le prestazioni di segmentazione 3D dei tumori cerebrali mantenendo una pipeline di inferenza basata solo sull'immagine.</p>
+          <h3>Prossimi Passi</h3>
+          <p>La fase successiva del progetto coinvolgerà un più ampio sforzo collaborativo di refertazione svolto da neuroradiologi esperti. Questo lavoro può anche costituire la base per una futura task dedicata MICCAI focalizzata su analisi RM dei tumori cerebrali arricchita dal referto, apprendimento multimodale immagine-testo o segmentazione guidata dal referto.</p>
+          <p>Il neuroradiologo di riferimento del progetto è il Dott. Francesco Farioli, neuroradiologo e dottorando presso l'Università di Modena e Reggio Emilia. Il centro di coordinamento è AImageLab, Dipartimento di Ingegneria "Enzo Ferrari", Università di Modena e Reggio Emilia.</p>
           <p>Tutti i collaboratori che completano il lavoro assegnato secondo i requisiti del progetto saranno inclusi come coautori nella pubblicazione risultante del dataset.</p>
         </div>
       </section>
@@ -199,7 +211,7 @@
           <h2>2. Obiettivi</h2>
         </div>
         <div class="prose">
-          <p>L'obiettivo primario del progetto BraTS-ReportX e generare un set completo, di alta qualita e validato di referti clinici radiologici per tutti i 1.251 esami RM BraTS-GLI. Gli obiettivi secondari sono:</p>
+          <p>L'obiettivo primario del progetto BraTS-ReportX e generare un set completo, di alta qualità e validato di referti clinici radiologici per tutti i 1.251 esami RM BraTS-GLI. Gli obiettivi secondari sono:</p>
           <ol>
             <li>Creare un dataset multimodale pubblico che combini immagini RM cerebrali, segmentazioni tumorali, referti clinici in testo libero e campi strutturati derivati dal referto.</li>
             <li>Supportare la ricerca su modelli multimodali che integrano informazioni di imaging e testuali.</li>
@@ -217,17 +229,17 @@
         </div>
         <div class="prose">
           <h3>Dataset</h3>
-          <p>Il progetto utilizzera il dataset BraTS-GLI, una raccolta pubblica di esami RM di pazienti adulti con gliomi diffusi. Il dataset include 1.251 esami. Per ciascun caso, i dati di imaging disponibili includono sequenze pesate in T1, T1 post-contrasto, T2 e FLAIR. Sono inoltre disponibili segmentazioni tumorali di esperti secondo il protocollo di annotazione BraTS.</p>
+          <p>Il progetto utilizzerà il dataset BraTS-GLI, una raccolta pubblica di esami RM di pazienti adulti con gliomi diffusi. Il dataset include 1.251 esami. Per ciascun caso, i dati di imaging disponibili includono sequenze pesate in T1, T1 post-contrasto, T2 e FLAIR. Sono inoltre disponibili segmentazioni tumorali di esperti secondo il protocollo di annotazione BraTS.</p>
           <p>Non saranno disponibili informazioni cliniche aggiuntive per i neuroradiologi refertatori. I referti saranno quindi basati esclusivamente sulle immagini RM e sulle segmentazioni tumorali disponibili.</p>
           <h3>Partecipanti</h3>
-          <p>La refertazione sara svolta da neuroradiologi. Ogni collaboratore ricevera credenziali personali di accesso e gli verra assegnato un sottoinsieme predefinito di esami.</p>
-          <p>Il carico di lavoro previsto per ciascun collaboratore e di circa 60 esami, includendo sia gliomi ad alto grado sia a basso grado. I casi assegnati dovranno essere completati entro 30 giorni dal ricevimento delle credenziali della piattaforma e delle istruzioni di studio. Il tempo atteso di refertazione e di circa 10 minuti per caso, sebbene possa variare in base alla complessita della lesione.</p>
+          <p>La refertazione sarà svolta da neuroradiologi. Ogni collaboratore riceverà credenziali personali di accesso e gli verrà assegnato un sottoinsieme predefinito di esami.</p>
+          <p>Il carico di lavoro previsto per ciascun collaboratore è di circa 60 esami, includendo sia gliomi ad alto grado sia a basso grado. I casi assegnati dovranno essere completati entro 30 giorni dal ricevimento delle credenziali della piattaforma e delle istruzioni di studio. Il tempo atteso di refertazione è di circa 10 minuti per caso, sebbene possa variare in base alla complessità della lesione.</p>
           <h3>Piattaforma di Refertazione</h3>
-          <p>I referti saranno generati tramite una piattaforma web dedicata sviluppata presso l'Universita di Modena e Reggio Emilia. La piattaforma consente la revisione diretta delle immagini RM e delle segmentazioni tumorali disponibili. Include inoltre un sistema automatico di dettatura speech-to-text, consentendo di compilare i referti manualmente o dettandoli tramite il microfono del computer.</p>
-          <p>I referti potranno essere scritti in inglese o in italiano. Quando necessario, i referti redatti in italiano potranno essere successivamente tradotti e armonizzati dal centro di coordinamento prima del rilascio finale del dataset. Dopo che i collaboratori avranno completato il modulo di adesione, riceveranno la documentazione informativa e il link al sito web di refertazione.</p>
+          <p>I referti saranno generati tramite una piattaforma web dedicata sviluppata presso l'Università di Modena e Reggio Emilia. La piattaforma consente la revisione diretta delle immagini RM e delle segmentazioni tumorali disponibili. Include inoltre un sistema automatico di dettatura speech-to-text, consentendo di compilare i referti manualmente o dettandoli tramite il microfono del computer.</p>
+          <p>I referti potranno essere scritti in inglese o in italiano. Quando necessario, i referti redatti in italiano potranno essere successivamente tradotti e armonizzati dal centro di coordinamento prima del rilascio finale del dataset. Dopo che i collaboratori avranno completato il modulo di adesione, riceveranno la documentazione informativa è il link al sito web di refertazione.</p>
           <h3>Istruzioni di Refertazione</h3>
-          <p>I referti saranno redatti in formato testo libero, guidati da un documento di istruzioni alla refertazione. L'obiettivo non e imporre un template rigidamente strutturato, ma incoraggiare descrizioni coerenti e clinicamente significative tra i casi.</p>
-          <p>Sara fornita una guida sintetica per indicare le principali caratteristiche di imaging che i collaboratori dovranno valutare e, quando visibili, includere nel referto. Particolare attenzione dovra essere posta alle caratteristiche correlate a VASARI e ai seguenti elementi:</p>
+          <p>I referti saranno redatti in formato testo libero, guidati da un documento di istruzioni alla refertazione. L'obiettivo non è imporre un template rigidamente strutturato, ma incoraggiare descrizioni coerenti e clinicamente significative tra i casi.</p>
+          <p>Sarà fornita una guida sintetica per indicare le principali caratteristiche di imaging che i collaboratori dovranno valutare e, quando visibili, includere nel referto. Particolare attenzione dovra essere posta alle caratteristiche correlate a VASARI e ai seguenti elementi:</p>
           <ul>
             <li>sede e lato della lesione;</li>
             <li>estensione tumorale e strutture anatomiche coinvolte;</li>
@@ -242,18 +254,18 @@
             <li>rapporto con aree eloquenti o clinicamente rilevanti, quando valutabile;</li>
             <li>reperti ancillari visibili nelle immagini disponibili.</li>
           </ul>
-          <p>I referti dovrebbero descrivere tutti i reperti di imaging rilevanti visibili nelle sequenze RM disponibili, entro i limiti imposti dalla qualita dell'immagine e dall'assenza di sequenze aggiuntive quali diffusione, perfusione, susceptibility-weighted imaging o acquisizioni RM avanzate.</p>
+          <p>I referti dovrebbero descrivere tutti i reperti di imaging rilevanti visibili nelle sequenze RM disponibili, entro i limiti imposti dalla qualità dell'immagine e dall'assenza di sequenze aggiuntive quali diffusione, perfusione, susceptibility-weighted imaging o acquisizioni RM avanzate.</p>
           <h3>Fase Iniziale di Calibrazione</h3>
-          <p>Per promuovere la coerenza tra i contributori, il progetto includera una fase iniziale di calibrazione. A ciascun collaboratore verra inizialmente richiesto di refertare tre casi. Questi referti saranno revisionati dal centro di coordinamento e verra fornito feedback su stile di refertazione, livello di dettaglio, completezza e aderenza alle istruzioni del progetto. L'obiettivo di questo passaggio e armonizzare la refertazione tra i collaboratori prima del completamento dell'intera assegnazione. Dopo questa fase di feedback, i collaboratori procederanno con i restanti casi assegnati.</p>
+          <p>Per promuovere la coerenza tra i contributori, il progetto includerà una fase iniziale di calibrazione. A ciascun collaboratore verrà inizialmente richiesto di refertare tre casi. Questi referti saranno revisionati dal centro di coordinamento e verrà fornito feedback su stile di refertazione, livello di dettaglio, completezza e aderenza alle istruzioni del progetto. L'obiettivo di questo passaggio è armonizzare la refertazione tra i collaboratori prima del completamento dell'intera assegnazione. Dopo questa fase di feedback, i collaboratori procederanno con i restanti casi assegnati.</p>
           <h3>Controllo Qualita e Validazione</h3>
-          <p>Il centro di coordinamento eseguira il controllo qualita dei referti inviati. La valutazione di qualita puo includere la verifica di completezza, coerenza, chiarezza e copertura dei concetti neuro-oncologici clinicamente rilevanti.</p>
-          <p>Un sottoinsieme di referti sara sottoposto a revisione aggiuntiva per valutare qualita del referto e coerenza inter-lettore. Alcuni casi saranno assegnati a piu neuroradiologi, consentendo la valutazione dell'accordo inter-lettore e l'identificazione di campi o concetti che possano richiedere ulteriore armonizzazione. Quando necessario, le discrepanze potranno essere revisionate dal centro di coordinamento o da un panel esperto di neuroradiologia.</p>
-          <p>Il dataset finale rilasciato includera referti in testo libero e campi strutturati. I campi strutturati potranno essere derivati dai referti, da revisione manuale o da analisi computazionale automatica. Questi campi potranno includere, quando applicabile, sede della lesione, regioni anatomiche coinvolte, lateralita tumorale, numero di lesioni e altri descrittori clinicamente rilevanti.</p>
+          <p>Il centro di coordinamento eseguirà il controllo qualità dei referti inviati. La valutazione di qualità può includere la verifica di completezza, coerenza, chiarezza e copertura dei concetti neuro-oncologici clinicamente rilevanti.</p>
+          <p>Un sottoinsieme di referti sarà sottoposto a revisione aggiuntiva per valutare qualità del referto e coerenza inter-lettore. Alcuni casi saranno assegnati a più neuroradiologi, consentendo la valutazione dell'accordo inter-lettore e l'identificazione di campi o concetti che possano richiedere ulteriore armonizzazione. Quando necessario, le discrepanze potranno essere revisionate dal centro di coordinamento o da un panel esperto di neuroradiologia.</p>
+          <p>Il dataset finale rilasciato includerà referti in testo libero e campi strutturati. I campi strutturati potranno essere derivati dai referti, da revisione manuale o da analisi computazionale automatica. Questi campi potranno includere, quando applicabile, sede della lesione, regioni anatomiche coinvolte, lateralità tumorale, numero di lesioni e altri descrittori clinicamente rilevanti.</p>
           <h3>Lavoro Preliminare</h3>
-          <p>Un dataset preliminare BraTS-ReportX e gia stato creato presso l'Universita di Modena e Reggio Emilia. Questo dataset iniziale include 257 esami BraTS-GLI arricchiti con referti curati da clinici e descrittori strutturati.</p>
-          <p>Il lavoro preliminare ha mostrato che i referti redatti dai clinici forniscono una copertura semantica clinica piu ampia e una migliore aderenza ai concetti di refertazione strutturata rispetto ad altre risorse BraTS arricchite con referti disponibili. La coerenza inter-lettore e stata valutata su casi sovrapposti, supportando l'affidabilita dell'approccio di refertazione.</p>
-          <p>I referti sono stati anche utilizzati come supervisione semantica ausiliaria in un framework di segmentazione 3D dei tumori cerebrali. In questo contesto, gli embedding testuali dei referti sono stati allineati con le caratteristiche visive RM durante il training, mentre l'inferenza e rimasta basata solo sui dati di imaging. L'uso di referti curati da clinici ha migliorato le prestazioni di segmentazione rispetto a una baseline solo immagine e rispetto a risorse testuali alternative.</p>
-          <p>Questi risultati supportano l'ipotesi che referti radiologici di alta qualita possano fornire una supervisione semantica significativa per l'analisi 3D di immagini mediche e giustificano l'estensione dello sforzo di annotazione all'intero dataset BraTS-GLI.</p>
+          <p>Un dataset preliminare BraTS-ReportX e già stato creato presso l'Università di Modena e Reggio Emilia. Questo dataset iniziale include 257 esami BraTS-GLI arricchiti con referti curati da clinici e descrittori strutturati.</p>
+          <p>Il lavoro preliminare ha mostrato che i referti redatti dai clinici forniscono una copertura semantica clinica più ampia e una migliore aderenza ai concetti di refertazione strutturata rispetto ad altre risorse BraTS arricchite con referti disponibili. La coerenza inter-lettore è stata valutata su casi sovrapposti, supportando l'affidabilità dell'approccio di refertazione.</p>
+          <p>I referti sono stati anche utilizzati come supervisione semantica ausiliaria in un framework di segmentazione 3D dei tumori cerebrali. In questo contesto, gli embedding testuali dei referti sono stati allineati con le caratteristiche visive RM durante il training, mentre l'inferenza è rimasta basata solo sui dati di imaging. L'uso di referti curati da clinici ha migliorato le prestazioni di segmentazione rispetto a una baseline solo immagine e rispetto a risorse testuali alternative.</p>
+          <p>Questi risultati supportano l'ipotesi che referti radiologici di alta qualità possano fornire una supervisione semantica significativa per l'analisi 3D di immagini mediche e giustificano l'estensione dello sforzo di annotazione all'intero dataset BraTS-GLI.</p>
         </div>
       </section>
 
@@ -262,7 +274,7 @@
           <h2>4. Risultati Attesi e Impatto</h2>
         </div>
         <div class="prose">
-          <p>Il risultato atteso di questo sforzo collaborativo di annotazione e il rilascio di BraTS-ReportX, un ampio dataset multimodale pubblico che include 1.251 esami RM BraTS-GLI, segmentazioni tumorali, referti clinici radiologici in testo libero e campi strutturati. I principali impatti scientifici attesi sono:</p>
+          <p>Il risultato atteso di questo sforzo collaborativo di annotazione è il rilascio di BraTS-ReportX, un ampio dataset multimodale pubblico che include 1.251 esami RM BraTS-GLI, segmentazioni tumorali, referti clinici radiologici in testo libero e campi strutturati. I principali impatti scientifici attesi sono:</p>
           <ol>
             <li>Abilitare la ricerca su modelli RM 3D multimodali che utilizzano congiuntamente immagini e testo.</li>
             <li>Supportare lo sviluppo di algoritmi di segmentazione guidati o supervisionati dal referto.</li>
@@ -271,7 +283,7 @@
             <li>Creare un benchmark clinicamente significativo per l'intelligenza artificiale in neuro-oncologia.</li>
             <li>Fornire le basi per una possibile futura task MICCAI focalizzata su analisi multimodale RM dei tumori cerebrali.</li>
           </ol>
-          <p>Il principale punto di forza del progetto e la combinazione di un dataset di imaging pubblico ampiamente utilizzato con referti radiologici generati da esperti e descrittori clinici strutturati. Rilasciando pubblicamente il dataset, BraTS-ReportX mira a facilitare la ricerca riproducibile e a consentire a piu laboratori di sviluppare, valutare e confrontare metodi multimodali su una risorsa condivisa.</p>
+          <p>Il principale punto di forza del progetto è la combinazione di un dataset di imaging pubblico ampiamente utilizzato con referti radiologici generati da esperti e descrittori clinici strutturati. Rilasciando pubblicamente il dataset, BraTS-ReportX mira a facilitare la ricerca riproducibile e a consentire a più laboratori di sviluppare, valutare e confrontare metodi multimodali su una risorsa condivisa.</p>
         </div>
       </section>
 
@@ -280,14 +292,15 @@
           <h2>5. Authorship e Rilascio dei Dati</h2>
         </div>
         <div class="prose">
-          <p>Tutti i collaboratori che completano il lavoro di refertazione assegnato e soddisfano i requisiti del progetto saranno inclusi come coautori nella pubblicazione risultante che descrive il dataset. Il requisito di authorship e il completamento dei 60 casi assegnati dopo approvazione del controllo qualita.</p>
-          <p>Il dataset finale sara preparato per il rilascio pubblico secondo le condizioni di condivisione dati applicabili del dataset BraTS originale e le policy del centro di coordinamento. La documentazione che accompagna il dataset includera le istruzioni di refertazione, la struttura dei dati, i campi strutturati e la citazione raccomandata.</p>
+          <p>Tutti i collaboratori che completano il lavoro di refertazione assegnato e soddisfano i requisiti del progetto saranno inclusi come coautori nella pubblicazione risultante che descrive il dataset. Il requisito di authorship è il completamento dei 60 casi assegnati dopo approvazione del controllo qualità.</p>
+          <p>Il dataset finale sarà preparato per il rilascio pubblico secondo le condizioni di condivisione dati applicabili del dataset BraTS originale e le policy del centro di coordinamento. La documentazione che accompagna il dataset includerà le istruzioni di refertazione, la struttura dei dati, i campi strutturati è la citazione raccomandata.</p>
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <p>ReportX Dataset</p>
+      <p class="footer-copy">© AImageLab, University of Modena and Reggio Emilia</p>
       <div class="footer-links">
         <a href="feedback.html">Feedback / issues</a>
       </div>
