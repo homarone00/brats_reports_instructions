@@ -384,6 +384,42 @@ body.page-dataset .language-panel {
   cursor: pointer;
 }
 
+.top-language-switch {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(90px, 1fr));
+  gap: 4px;
+  margin-left: 8px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.top-language-switch label {
+  display: grid;
+  place-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+body.page-protocol .nav-links {
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px 14px;
+}
+
+body.page-protocol .nav-links a,
+body.page-protocol .share-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+}
+
 #lang-it:checked + label,
 #lang-en:checked + label {
   color: #ffffff;
@@ -398,6 +434,17 @@ body.page-clinicians[data-lang="en"] .clinicians-it-content {
 body.page-clinicians[data-lang="it"] .lang-copy-en,
 body.page-clinicians[data-lang="en"] .lang-copy-it {
   display: none;
+}
+
+body.page-protocol[data-lang="it"] .protocol-en-content,
+body.page-protocol[data-lang="en"] .protocol-it-content {
+  display: none;
+}
+
+body.page-protocol[data-lang="it"] #lang-it + label,
+body.page-protocol[data-lang="en"] #lang-en + label {
+  color: #ffffff;
+  background: var(--dark);
 }
 
 .section-heading {
@@ -1004,6 +1051,10 @@ figcaption {
     grid-template-columns: 1fr;
   }
 
+  body.page-protocol .nav-links {
+    flex-wrap: wrap;
+  }
+
   .landing-links,
   .tumor-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1028,6 +1079,15 @@ figcaption {
 
   .nav-links {
     justify-content: flex-start;
+  }
+
+  .top-language-switch {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .top-language-switch label {
+    min-height: 40px;
   }
 
   .hero {
