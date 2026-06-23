@@ -732,6 +732,33 @@ td:first-child {
   margin: 0 0 16px;
 }
 
+.platform-link {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.video-label {
+  max-width: 940px;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #354159;
+  font-weight: 700;
+}
+
+.video-wrap {
+  max-width: 940px;
+  margin-top: 8px;
+}
+
+.video-wrap video {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #000;
+}
+
 .feedback-note {
   max-width: 940px;
   margin: 22px auto 0;
@@ -740,6 +767,17 @@ td:first-child {
   border-radius: 8px;
   color: #354159;
   background: #ffffff;
+  font-weight: 700;
+}
+
+.highlight-note {
+  max-width: 940px;
+  margin: 22px auto 0;
+  padding: 14px 16px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  color: var(--dark);
+  background: var(--light);
   font-weight: 700;
 }
 
