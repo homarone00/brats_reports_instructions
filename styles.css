@@ -412,17 +412,13 @@ body.page-dataset .language-panel {
   cursor: pointer;
 }
 
-body.page-protocol .nav-links,
-body.page-clinicians .nav-links {
+.nav-links {
   align-items: center;
-  flex-wrap: nowrap;
   gap: 8px 14px;
 }
 
-body.page-protocol .nav-links a,
-body.page-protocol .share-button,
-body.page-clinicians .nav-links a,
-body.page-clinicians .share-button {
+.nav-links a,
+.share-button {
   display: inline-flex;
   align-items: center;
   min-height: 34px;
@@ -434,25 +430,23 @@ body.page-clinicians .share-button {
   background: var(--dark);
 }
 
-body.page-clinicians[data-lang="it"] .clinicians-en-content,
-body.page-clinicians[data-lang="en"] .clinicians-it-content {
+body[data-lang="it"] .clinicians-en-content,
+body[data-lang="en"] .clinicians-it-content {
   display: none;
 }
 
-body.page-clinicians[data-lang="it"] .lang-copy-en,
-body.page-clinicians[data-lang="en"] .lang-copy-it {
+body[data-lang="it"] .lang-copy-en,
+body[data-lang="en"] .lang-copy-it {
   display: none;
 }
 
-body.page-protocol[data-lang="it"] .protocol-en-content,
-body.page-protocol[data-lang="en"] .protocol-it-content {
+body[data-lang="it"] .protocol-en-content,
+body[data-lang="en"] .protocol-it-content {
   display: none;
 }
 
-body.page-protocol[data-lang="it"] #lang-it + label,
-body.page-protocol[data-lang="en"] #lang-en + label,
-body.page-clinicians[data-lang="it"] #lang-it + label,
-body.page-clinicians[data-lang="en"] #lang-en + label {
+body[data-lang="it"] #lang-it + label,
+body[data-lang="en"] #lang-en + label {
   color: #ffffff;
   background: var(--dark);
 }
@@ -1105,7 +1099,7 @@ figcaption {
     grid-template-columns: 1fr;
   }
 
-  body.page-protocol .nav-links {
+  .nav-links {
     flex-wrap: wrap;
   }
 

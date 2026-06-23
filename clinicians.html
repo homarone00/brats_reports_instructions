@@ -59,7 +59,7 @@
           <p>I referti saranno letti e processati anche da sistemi automatici. Per questo è importante descrivere ogni reperto in modo preciso, esplicito e standardizzato, evitando formulazioni ambigue o troppo variabili tra casi simili.</p>
           <p>Quando descrivi un finding, usa sempre la stessa logica: indica la sede, specifica la componente tumorale coinvolta quando rilevante e riporta la caratteristica osservata. Mantieni lo stesso modo di spiegare concetti ricorrenti, così il testo resta naturale per l'annotatore ma più facilmente interpretabile dalla macchina.</p>
         </div>
-        <p class="highlight-note">L'articolo derivato verrà sottoposto a <strong>Nature</strong>. Tutti gli annotatori i cui referti superano il controllo di qualità saranno inclusi come autori.</p>
+        <p class="highlight-note">L'articolo derivato verrà sottoposto a <strong>Nature</strong>. Tutti gli annotatori che contribuiscono e i cui referti superano il controllo di qualità saranno inclusi come coautori.</p>
         <p class="feedback-note">Per dubbi, problemi o suggerimenti: <a href="mailto:reportx@unimore.it?subject=Feedback%20BraTS%20Reports%20annotatori">reportx@unimore.it</a></p>
       </section>
 
@@ -72,7 +72,7 @@
           <p>The reports will also be read and processed by automatic systems. For this reason, each finding should be described precisely, explicitly, and consistently, avoiding ambiguous wording or excessive variation across similar cases.</p>
           <p>When describing a finding, follow the same structure whenever possible: state the location, specify the tumor component involved when relevant, and report the observed characteristic. Keep recurring concepts phrased consistently, so the text remains natural for the annotator while being easier for machines to interpret.</p>
         </div>
-        <p class="highlight-note">The resulting paper will be submitted to <strong>Nature</strong>. Every annotator whose reports pass the quality check will be included as an author.</p>
+        <p class="highlight-note">The resulting paper will be submitted to <strong>Nature</strong>. Contributing annotators whose reports pass the quality check will be included as co-authors.</p>
         <p class="feedback-note">For questions, issues, or suggestions: <a href="mailto:reportx@unimore.it?subject=BraTS%20Reports%20annotator%20feedback">reportx@unimore.it</a></p>
       </section>
 
@@ -1133,16 +1133,5 @@
       </div>
     </footer>
     <script src="site.js"></script>
-    <script>
-      document.querySelectorAll('input[name="language"]').forEach((input) => {
-        input.addEventListener('change', () => {
-          document.body.dataset.lang = input.id === 'lang-en' ? 'en' : 'it';
-          document.querySelectorAll('.video-wrap video').forEach((video) => {
-            video.pause();
-            video.load();
-          });
-        });
-      });
-    </script>
   </body>
 </html>

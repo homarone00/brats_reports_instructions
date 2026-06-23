@@ -1,4 +1,58 @@
 (function () {
+  const storageKey = "reportx-language";
+  const supportedLanguages = new Set(["en", "it"]);
+  const radios = document.querySelectorAll('input[name="language"]');
+
+  if (!radios.length) {
+    return;
+  }
+
+  function getStoredLanguage() {
+    try {
+      const language = window.localStorage.getItem(storageKey);
+      return supportedLanguages.has(language) ? language : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function storeLanguage(language) {
+    try {
+      window.localStorage.setItem(storageKey, language);
+    } catch (error) {
+      // Ignore storage failures; the in-page language switch still works.
+    }
+  }
+
+  function setLanguage(language, options) {
+    const nextLanguage = supportedLanguages.has(language) ? language : "en";
+    document.body.dataset.lang = nextLanguage;
+    document.documentElement.lang = nextLanguage;
+
+    radios.forEach(function (radio) {
+      radio.checked = radio.id === "lang-" + nextLanguage;
+    });
+
+    if (options && options.reloadVideos) {
+      document.querySelectorAll(".video-wrap video").forEach(function (video) {
+        video.pause();
+        video.load();
+      });
+    }
+  }
+
+  setLanguage(getStoredLanguage() || document.body.dataset.lang || "en");
+
+  radios.forEach(function (radio) {
+    radio.addEventListener("change", function () {
+      const language = radio.id === "lang-it" ? "it" : "en";
+      setLanguage(language, { reloadVideos: true });
+      storeLanguage(language);
+    });
+  });
+})();
+
+(function () {
   const button = document.querySelector("[data-share-button]");
 
   if (!button) {
