@@ -22,9 +22,9 @@
           </a>
         </div>
         <div class="nav-links">
-          <a href="clinicians.html">Annotators</a>
-          <a href="experimental-protocol.html">Protocol</a>
-          <button class="share-button" type="button" data-share-button>Share</button>
+          <a href="clinicians.html"><span class="lang-copy-en">Annotators</span><span class="lang-copy-it">Annotatori</span></a>
+          <a href="experimental-protocol.html"><span class="lang-copy-en">Protocol</span><span class="lang-copy-it">Protocollo</span></a>
+          <button class="share-button" type="button" data-share-button><span class="lang-copy-en">Share</span><span class="lang-copy-it">Condividi</span></button>
           <div class="top-language-switch" aria-label="Language selector">
             <input class="lang-radio" type="radio" name="language" id="lang-en" checked>
             <label for="lang-en">English</label>
@@ -58,7 +58,7 @@
     </header>
 
     <main>
-      <section id="dataset-release" class="section dataset-content">
+      <section id="dataset-release" class="section dataset-content lang-copy-en">
         <div class="section-heading">
           <h2>Tumor Region Legend</h2>
         </div>
@@ -96,7 +96,45 @@
         </div>
       </section>
 
-      <section class="section dataset-content">
+      <section class="section dataset-content lang-copy-it">
+        <div class="section-heading">
+          <h2>Legenda delle Regioni Tumorali</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Etichetta</th>
+                <th>Descrizione</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ET</strong></td>
+                <td>Enhancing Tumor</td>
+              </tr>
+              <tr>
+                <td><strong>NETC</strong></td>
+                <td>Non-Enhancing Tumor Core</td>
+              </tr>
+              <tr>
+                <td><strong>ED</strong></td>
+                <td>Edema</td>
+              </tr>
+              <tr>
+                <td><strong>TC</strong></td>
+                <td>Tumor Core, definito come ET + NETC</td>
+              </tr>
+              <tr>
+                <td><strong>WT</strong></td>
+                <td>Whole Tumor, definito come ET + NETC + ED</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section dataset-content lang-copy-en">
         <div class="section-heading">
           <h2>Field Definitions</h2>
         </div>
@@ -272,6 +310,188 @@
                 <td>Subject specific findings</td>
                 <td>Any subject specific findings that do not fall under any predefined category.</td>
                 <td><span class="badge clinician">Annotator</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section dataset-content lang-copy-it">
+        <div class="section-heading">
+          <h2>Definizione dei Campi</h2>
+        </div>
+        <div class="table-wrap wide-table">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrizione</th>
+                <th>Assegnato a</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>F001</td>
+                <td>Regione del Centro del Tumore</td>
+                <td>Il centro del tumore è definito come il baricentro, o centro di massa, della regione TC. La posizione di questo punto all'interno dell'atlante viene utilizzata per assegnare la corrispondente regione anatomica. Per evitare casi in cui il baricentro si trovi su un confine, si considera un intorno sferico con raggio pari a un decimo del diametro assiale. La regione assegnata è quindi definita come la regione più prevalente all'interno di questa sfera.</td>
+                <td><span class="badge machine">Machine</span></td>
+              </tr>
+              <tr>
+                <td>F002</td>
+                <td>Coordinate del Centro del Tumore</td>
+                <td>Le coordinate del baricentro sono calcolate come le coordinate medie di tutti i voxel nella regione TC.</td>
+                <td><span class="badge machine">Machine</span></td>
+              </tr>
+              <tr>
+                <td>F003</td>
+                <td>Lato del Centro del Tumore</td>
+                <td>Definito come la lateralità anatomica del centro del tumore in base alla posizione del baricentro del TC rispetto alla linea mediana del cervello, ad esempio sinistra, destra o linea mediana.</td>
+                <td><span class="badge machine">Machine</span><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F004</td>
+                <td>Coinvolgimento di Aree Eloquenti</td>
+                <td>Determinato mediante l'atlante, questo campo specifica quali delle seguenti aree funzionali eloquenti sono coinvolte dal tumore: visione, motricità, linguaggio motorio e linguaggio ricettivo.</td>
+                <td><span class="badge machine">Machine</span></td>
+              </tr>
+              <tr>
+                <td>F005</td>
+                <td>Qualità dell'Enhancement</td>
+                <td>Valutazione qualitativa dell'enhancement del contrasto CET, indicando se l'enhancement è presente e quanto appare pronunciato.</td>
+                <td><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F006</td>
+                <td>Proporzione di ET</td>
+                <td>Derivato automaticamente dalla maschera di segmentazione con la formula: n. voxel<sub>ET</sub> / n. voxel<sub>WT</sub>.</td>
+                <td><span class="badge machine">Machine</span></td>
+              </tr>
+              <tr>
+                <td>F007</td>
+                <td>Proporzione di ED</td>
+                <td>Derivato automaticamente dalla maschera di segmentazione con la formula: n. voxel<sub>ED</sub> / n. voxel<sub>WT</sub>.</td>
+                <td><span class="badge machine">Machine</span></td>
+              </tr>
+              <tr>
+                <td>F008</td>
+                <td>Proporzione di NETC</td>
+                <td>Derivato automaticamente dalla maschera di segmentazione con la formula: n. voxel<sub>NETC</sub> / n. voxel<sub>WT</sub>.</td>
+                <td><span class="badge machine">Machine</span></td>
+              </tr>
+              <tr>
+                <td>F009</td>
+                <td>Spessore del Margine ET</td>
+                <td>Definito come lo spessore medio del margine ET calcolato geometricamente.</td>
+                <td><span class="badge machine">Machine</span></td>
+              </tr>
+              <tr>
+                <td>F010</td>
+                <td>Definizione del Margine Enhancing</td>
+                <td>Valuta se la maggior parte del margine esterno dell'enhancement è ben definita o scarsamente definita.</td>
+                <td><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F011</td>
+                <td>Definizione del Margine Non-Enhancing</td>
+                <td>Valuta se la maggior parte del margine esterno della componente non-enhancing è ben definita o scarsamente definita.</td>
+                <td><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F012</td>
+                <td>Emorragia Intratumorale</td>
+                <td>Valuta se un'emorragia intrinseca è visibile in qualsiasi punto della matrice tumorale.</td>
+                <td><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F013</td>
+                <td>Dimensione del TC</td>
+                <td>Definita come i maggiori diametri perpendicolari della sezione trasversale del TC nei piani assiale, sagittale e coronale.</td>
+                <td><span class="badge machine">Machine</span></td>
+              </tr>
+              <tr>
+                <td>F014</td>
+                <td>Dimensione dell'ED</td>
+                <td>Definita come i maggiori diametri perpendicolari della sezione trasversale dell'ED nei piani assiale, sagittale e coronale.</td>
+                <td><span class="badge machine">Machine</span></td>
+              </tr>
+              <tr>
+                <td>F015</td>
+                <td>Eterogeneità del Tumore</td>
+                <td>Il grado di eterogeneità dell'architettura interna del tumore.</td>
+                <td><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F016</td>
+                <td>Aree Coinvolte dal TC</td>
+                <td>Determinato mediante l'atlante, questo campo specifica quali regioni cerebrali sono coinvolte dal TC.</td>
+                <td><span class="badge machine">Machine</span></td>
+              </tr>
+              <tr>
+                <td>F017</td>
+                <td>Aree Coinvolte dall'ED</td>
+                <td>Determinato mediante l'atlante, questo campo specifica quali regioni cerebrali sono coinvolte dall'ED.</td>
+                <td><span class="badge machine">Machine</span></td>
+              </tr>
+              <tr>
+                <td>F018</td>
+                <td>Numero di Lesioni</td>
+                <td>Numero di lesioni indipendenti osservate nel cervello.</td>
+                <td><span class="badge machine">Machine</span><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F019</td>
+                <td>Tipo di Lesione</td>
+                <td>Variabile categorica che indica il tipo di lesione osservata. Valori possibili: singola, multicentrica o multifocale.</td>
+                <td><span class="badge machine">Machine</span><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F020</td>
+                <td>Invasione Ependimale</td>
+                <td>Valuta se il TC è a contatto con una superficie ependimale adiacente.</td>
+                <td><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F021</td>
+                <td>Profondità del TC</td>
+                <td>Determina la profondità del TC. Valori possibili: corticale, sostanza bianca sottocorticale, sostanza bianca profonda e nuclei della base.</td>
+                <td><span class="badge machine">Machine</span><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F022</td>
+                <td>Macroarea del Centro del Tumore</td>
+                <td>La macroarea, o lobo, in cui ricade il baricentro, ottenuta utilizzando l'atlante.</td>
+                <td><span class="badge machine">Machine</span><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F023</td>
+                <td>Spostamento della Linea Mediana</td>
+                <td>Lo spostamento della linea mediana causato dalla massa tumorale, in millimetri.</td>
+                <td><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F024</td>
+                <td>Forma del Tumore</td>
+                <td>La forma approssimativa della massa tumorale.</td>
+                <td><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F025</td>
+                <td>Origine del Tumore</td>
+                <td>Dove origina il tumore, secondo le categorie: Periventricolare, Girale o Sostanza bianca profonda.</td>
+                <td><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F026</td>
+                <td>Il Tumore Attraversa la Linea Mediana</td>
+                <td>Indica se il tumore attraversa la linea mediana.</td>
+                <td><span class="badge clinician">Annotatore</span></td>
+              </tr>
+              <tr>
+                <td>F027</td>
+                <td>Reperti Specifici del Soggetto</td>
+                <td>Qualsiasi reperto specifico del soggetto che non rientra in alcuna categoria predefinita.</td>
+                <td><span class="badge clinician">Annotatore</span></td>
               </tr>
             </tbody>
           </table>
